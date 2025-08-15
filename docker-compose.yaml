@@ -1,0 +1,36 @@
+services:
+  app1:
+    build: .
+    container_name: app1
+    environment:
+      - APP_NAME=App1
+    expose:
+      - "3000"
+
+  app2:
+    build: .
+    container_name: app2
+    environment:
+      - APP_NAME=App2
+    expose:
+      - "3000"
+
+  app3:
+    build: .
+    container_name: app3
+    environment:
+      - APP_NAME=App3
+    expose:
+      - "3000"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_server
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - app1
+      - app2
+      - app3

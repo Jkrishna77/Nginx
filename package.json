@@ -1,0 +1,14 @@
+{
+  "name": "nginx",
+  "version": "1.0.0",
+  "description": "Simple Node.js app to test Nginx reverse proxy",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Jk",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
